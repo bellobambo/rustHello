@@ -1,56 +1,37 @@
-
-
-
 fn main() {
-    let numbers: [i32; 5] = [1, 2, 3, 4, 5];
-    println!("Number Array : {:?}", numbers);
+    hello_world();
+    tell_height(20);
+    human_id("John Doe", 30, 175.5);
 
-    // let mix = [1,2, "apple", true];
-    // println!("Mix Array : {:?}", mix)
+    let x = {
+        let price  = 5;
+        let quantity  = 10;
+        price * quantity
+    };
 
-    let fruits: [&str; 3] = ["Apple", "Banana", "Orange"];
-    println!("Fruits Array: {:?}", fruits);
-    println!("Fruits Array: {}", fruits[0]);
-    println!("Fruits Array: {}", fruits[1]);
-    println!("Fruits Array: {}", fruits[2]);
-
-    // Tuples
-
-    let human: (String, i32, bool) = ("Alice".to_string(), 30, false);
-    println!("Human char : {:?}", human);
-
-    let my_mix_tuple = ("Kratos", 23, true, [1, 2, 3, 4, 5]);
-    println!("My Mixed tuple : {:?}", my_mix_tuple);
-
-    // Slices
-    let number_slices: &[i32] = &[1, 2, 3, 4, 5];
-    println!("Number Slices : {:?}", number_slices);
-
-    let animal_slices: &[&str] = &["Lion", "Elephant", "Crocodile"];
-    println!("Animal Slices : {:?}", animal_slices);
-
-    let book_slices: &[&String] = &[
-        &"IT".to_string(),
-        &"Harry Porter".to_string(),
-        &"ZEN".to_string(),
-    ];
-    println!("Book Slices : {:?}", book_slices);
-
-    let mut stone_cold: String = String::from("Hell, ");
-    stone_cold.push_str("Yeah!");
-    println!("Stone Cold Says: {}", stone_cold);
-
-    let string: String = String::from("Hello, World!");
-    let slice: &str = &string[0..5];
-    println!("Slice Value : {}", slice);
+    println!("Result is: {}", x);
+    let sum = add(4, 6);
+    println!("Sum is: {}", sum);
+    println!("value from function 'add' is: {}", add(4,6));
 }
 
-fn print() {
-    println!("SLICE: {}", slice)
-}
-
-
-
-fn hello_world(){
+fn hello_world() {
     println!("Hello, World! 🦀🦀");
+}
+
+fn tell_height(height: u32) {
+    println!("Your height is {} cm", height);
+}
+
+
+fn human_id(name : &str, age: u32, height : f32){
+    println!("My Name is: {}, i am : {} years old, and my height is: {} cm", name, age, height);
+}
+
+
+
+// expression
+
+fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
