@@ -1,28 +1,19 @@
-fn main(){
-    let x : i32 = -42;
-    let y : u64 = 100;
+fn main (){
+    let numbers : [i32; 5] = [1,2,3,4,5];
+    println!("Number Array : {:?}", numbers);
 
-    println!("Signed Integer : {}", x);
-    println!("Unsigned Integer : {}", y);
+    // let mix = [1,2, "apple", true];
+    // println!("Mix Array : {:?}", mix)
 
-
-
-    let e : i32 = 213456789;
-    let i : i64 = 123456789012345678;
-
-    println!("Maximium value of i32 : {}", e);
-    println!("Maximum value of i64 : {}", i);
+    let fruits: [&str; 3] = ["Apple", "Banana", "Orange"];
+    println!("Fruits Array: {:?}", fruits);
+    println!("Fruits Array: {}", fruits[0]);
+    println!("Fruits Array: {}", fruits[1]);
+    println!("Fruits Array: {}", fruits[2]);
 
 
-    let pi : f64 = 3.14;
+    // Tuples
 
-    println!("Value of pi : {}", pi);
-
-    let is_snowing : bool = true;
-    println!("is it snowing? : {}", is_snowing);
-
-
-    let letter : char = 'a';
-    println!("First letter of the alphabet is : {}", letter);
-
+    let human : (String, i32, bool) = ("Alice", 30, false);
+    println!("Human char : {:?}", human)
 }
