@@ -1,54 +1,61 @@
-fn main() {
-    hello_world();
-    tell_height(20);
-    human_id("John Doe", 30, 175.5);
+// fn main (){
+//     let s1 = String::from("Rust");
+//     let len = calculate_length(&s1);
 
-    let x = {
-        let price  = 5;
-        let quantity  = 10;
-        price * quantity
+//     println!("The length of '{}' is {}.", s1, len);
+// }
+
+// fn calculate_length(s: &String) -> usize{
+//     s.len()
+// }
+
+// fn main(){
+//     let s1 = String::from("Hello");
+//     let len = calculate_length(&s1);
+//     println!("The length of '{}' is {}.", s1, len);
+
+// }
+
+// fn calculate_length(s: &String) -> usize{
+//     s.len()
+// }
+
+
+
+fn main (){
+    // let mut _x = 5;
+    // let _r = &mut _x;
+    // *_r += 1;
+    // *_r -= 3;
+
+    // println!("The value of _x is: {}", _x);
+    // println!("The value of _r is: {}", _r);
+
+
+    let mut account = BankAccount{
+        owner : "Alice".to_string(),
+        balance : 150.55,
     };
 
-    println!("Result is: {}", x);
-    let sum = add(4, 6);
-    println!("Sum is: {}", sum);
-    println!("value from function 'add' is: {}", add(4,6));
+    account.check_balance();
+    account.withdraw(45.25);
+    account.check_balance();
 
-    let weight_kg = 70.0;
-    let height_m = 1.75;
-    let bmi = calculate_bmi(weight_kg, height_m);
-    println!("Your BMI is: {:.2}", bmi);
+
 }
 
-fn hello_world() {
-    println!("Hello, World! 🦀🦀");
+struct BankAccount{
+    owner: String,
+    balance: f64,
 }
 
-fn tell_height(height: u32) {
-    println!("Your height is {} cm", height);
+impl BankAccount {
+    fn withdraw(&mut self, amount : f64){
+        println!("Withdrawing ${} from the account, owned by {}", amount, self.owner);
+        self.balance -= amount;
+    }
+
+    fn check_balance(&self){
+        println!("Account owned by {} has The current balance of ${}", self.owner, self.balance);
+    }
 }
-
-
-fn human_id(name : &str, age: u32, height : f32){
-    println!("My Name is: {}, i am : {} years old, and my height is: {} cm", name, age, height);
-}
-
-
-
-// expression
-
-fn add(a: i32, b: i32) -> i32  {
-    a + b
-}
-
-
-// statements
-
-// let x = 10;
-// BMI = height(kg)/height(m) * height(m)^2
-
-
-fn calculate_bmi(weight_kg: f64, height_m: f64) -> f64{
-    weight_kg / (height_m * height_m)
-}
-
