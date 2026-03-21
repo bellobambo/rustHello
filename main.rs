@@ -13,6 +13,11 @@ fn main() {
     let sum = add(4, 6);
     println!("Sum is: {}", sum);
     println!("value from function 'add' is: {}", add(4,6));
+
+    let weight_kg = 70.0;
+    let height_m = 1.75;
+    let bmi = calculate_bmi(weight_kg, height_m);
+    println!("Your BMI is: {:.2}", bmi);
 }
 
 fn hello_world() {
@@ -32,6 +37,18 @@ fn human_id(name : &str, age: u32, height : f32){
 
 // expression
 
-fn add(a: i32, b: i32) -> i32 {
+fn add(a: i32, b: i32) -> i32  {
     a + b
 }
+
+
+// statements
+
+// let x = 10;
+// BMI = height(kg)/height(m) * height(m)^2
+
+
+fn calculate_bmi(weight_kg: f64, height_m: f64) -> f64{
+    weight_kg / (height_m * height_m)
+}
+
