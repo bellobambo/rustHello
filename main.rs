@@ -49,7 +49,6 @@ fn main() {
     //     println!("count = {count}");
     //     let mut remaining = 10;
 
-
     //     loop {
     //         println!("remaining = {remaining}");
     //         if remaining == 9 {
@@ -64,7 +63,6 @@ fn main() {
     //     count += 1;
     // }
     // println!("End count = {count}");
-
 
     // let mut number = 3;
     // while number != 0 {
@@ -82,61 +80,106 @@ fn main() {
     //     println!("The value is: {}", letter);
     // }
 
+    // let rect = (200, 500);
 
-    let rect = (200, 500);
+    // struct Book {
+    //     title: String,
+    //     author: String,
+    //     pages: String,
+    //     avaliable: String,
+
+    // }
+
+    // struct User{
+    //     active : bool,
+    //     username : String,
+    //     email : String,
+    //     sign_in_count : u64,
+    // }
+
+    // let mut user1 = User{
+    //     active : true,
+    //     username : String::from("john_doe"),
+    //     email : String::from("bellobambo21@gmail.com"),
+    //     sign_in_count : 1,
+    // };
+
+    // // user1.email = String::from("anotheremail.com");
+    // println!("User 1: {}", user1.email);
+
+    // fn build_user(email : String, username : String) -> User{
+    //     User{
+    //         active : true,
+    //         username : username,
+    //         email : email,
+    //         sign_in_count : 0,
+    //     }
+    // }
+
+    // let user2 = User{
+    //     email : String::from("anotheremail@gmail.com"),
+    //     ..user1
+
+    // };
+
+    // println!("User 2: {}", user2.email);
+
+    // struct Color(i32, i32, i32);
+    // struct Point(i32, i32, i32);
+
+    // let black = Color(0, 0, 0);
+    // let white = Color(255, 255, 255);
+
+    // struct AlwaysEqual;
+    // let subject = AlwaysEqual;
 
 
-    struct Book {
-        title: String,
-        author: String,
-        pages: String,
-        avaliable: String,
-        
+
+    let _four = IPAddrKind::V4;
+    let _six = IPAddrKind::V6;
+
+    fn route(ip_kind: IPAddrKind) {
+
     }
 
-    struct User{
-        active : bool,
-        username : String,
-        email : String,
-        sign_in_count : u64,
+    route(IPAddrKind::V4);
+    route(IPAddrKind::V6);
+
+
+    enum IPAddrKind {
+        V4(),
+        V6(),
     }
 
-    let mut user1 = User{
-        active : true,
-        username : String::from("john_doe"),
-        email : String::from("bellobambo21@gmail.com"),
-        sign_in_count : 1,
-    };
 
-    // user1.email = String::from("anotheremail.com");
-    println!("User 1: {}", user1.email);
-
-    fn build_user(email : String, username : String) -> User{
-        User{
-            active : true,
-            username : username,
-            email : email,
-            sign_in_count : 0, 
-        }
+    enum IPAddr {
+        V4(u8, u8,u8,u8),
+        V6(String),
     }
 
-    let user2 = User{
-        email : String::from("anotheremail@gmail.com"),
-        ..user1
-
-    };
-
-    println!("User 2: {}", user2.email);
+    let home = IPAddr::V4(127, 0, 0, 1);
+    let loopback = IPAddr::V6(String::from("::1"));
 
 
-    struct Color(i32, i32, i32);
-    struct Point(i32, i32, i32);
-
-    let black = Color(0, 0, 0);
-    let white = Color(255, 255, 255);
-
-    struct AlwaysEqual;
-    let subject = AlwaysEqual;
 
 
+
+    // struct IPAddr{
+    //     kind : IpAddrKind,
+    //     address : String,
+    // }
+
+    // let home = IPAddr{
+    //     kind : IPAddrKind::V4,
+    //     address : String::from("127.0.0.1")
+    // }
+
+    // let loopback = IPAddr{
+    //     kind : IPAddrKind::V6,
+    //     address : String::from("::1")
+    // }
+
+
+
+    
 }
