@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn main() {
     // let _v: Vec<i32> = Vec::new();
     // let mut _vec: Vec<i32> = Vec::new();
@@ -23,18 +25,29 @@ fn main() {
     // }
 
 
-    let s = "whatever".to_string();
-    let s = String::from("whatever");
+    // let s = "whatever".to_string();
+    // let s = String::from("whatever");
 
-    let s1 = String::from("Hello, ");
-    let s2 = String::from("world!");
-    let s3 = s1 + &s2; 
-    let mut s = String::from("foo");
+    // let s1 = String::from("Hello, ");
+    // let s2 = String::from("world!");
+    // let s3 = s1 + &s2; 
+    // let mut s = String::from("foo");
 
-    s.push_str("bar");
-    s.push('!');
-    // println!("The string is: {}", s);
-    println!("The string is: {}", s3);
+    // s.push_str("bar");
+    // s.push('!');
+    // // println!("The string is: {}", s);
+    // println!("The string is: {}", s3);
+
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name).copied().unwrap_or(0);
+
+    for (key, value) in &scores {
+        println!("{}: {}", key, value);
+    }
 
 
 }
