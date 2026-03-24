@@ -1,47 +1,40 @@
-fn divideResult (numerator : f64, denominator : f64)-> Result<f64, String>{
-    if denominator == 0.0 {
-        Err("Error: Division by zero".into())
-    }else{
-        Ok(numerator/denominator)
-    }
-}
+fn main() {
+    // let _v: Vec<i32> = Vec::new();
+    // let mut _vec: Vec<i32> = Vec::new();
+    // let mut _vec: Vec<i32> = vec![1, 2, 3];
 
-fn main (){
-    
+    // _vec.push(5);
+    // _vec.push(6);
+    // _vec.push(7);
+    // _vec.push(8);
+    // _vec.push(9);
 
-match divideResult(100.23, 00.0){
-    Ok(result) => println!("Result: {}", result),
-    Err(e) => println!("Issues Day: {}", e),
-}
+    // println!("The numbers vector is: {:?}", _vec);
 
-//    enum OPTION<T>{
-//     Some(T),
-//     None,
-//    }
+    // let _v = vec![1, 2, 3, 4, 5];
 
-//    enum Result<T,E>{
-//     Ok(T),
-//     Err(E), 
-//    }
+    // // let third  : &i32 = &_v[2];
+    // // println!("The third element is: {}", third);
 
-//    fn divide (numerator : f64, demoninator : f64)-> OPTION<f64>{
-//     if demoninator == 0.0 {
-//         OPTION::None
-//     }else{
-//         OPTION::Some(numerator/demoninator)
-//     }
-//    }
+    // let third = _v.get(2);
+    // match third {
+    //     Some(third) => println!("The third element is: {}", third),
+    //     None => println!("There is no third element."),
+    // }
 
 
+    let s = "whatever".to_string();
+    let s = String::from("whatever");
 
-    println!("Hello, world!");
-}
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2; 
+    let mut s = String::from("foo");
+
+    s.push_str("bar");
+    s.push('!');
+    // println!("The string is: {}", s);
+    println!("The string is: {}", s3);
 
 
-fn divideOption (numerator : f64, demoninator : f64)-> Option<f64>{
-    if demoninator == 0.0 {
-        None
-    }else{
-        Some(numerator/demoninator)
-    }
 }
